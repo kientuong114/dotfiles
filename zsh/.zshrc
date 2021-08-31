@@ -131,7 +131,7 @@ alias wp='wal -i /home/kientuong114/pictures/wallpapers'
 alias tmp='mkdir -p /tmp/test && cd /tmp/test'
 alias pwdcp='pwd | xclip -selection clipboard'
 
-alias genpwd='python -c "import string, random; print(\"\".join(random.choice(string.ascii_letters+string.digits+string.punctuation) for _ in range(16)))" | xclip -selection clipboard'
+alias genpwd='python -c "import string, os; alphabet = string.ascii_letters+string.digits; print(\"\".join(alphabet[ord(os.urandom(1)) % len(alphabet)] for _ in range(20)))" | xclip -selection clipboard'
 alias rev='ssh -Y -p 2522 rev@127.0.0.1'
 alias ctf='cd ~/ctfs/ccit21-finals'
 
@@ -153,10 +153,6 @@ export EDITOR=nvim
 
 export PATH=/home/kientuong114/scripts:/home/kientuong114/.local/bin:$PATH
 
-# Add CLion to path
-# export PATH=/home/kientuong114/software/clion/clion-2020.1.2/bin:$PATH
-
-
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export MAUDE_LIB="/usr/share/maude"
 
@@ -169,6 +165,6 @@ eval "$(goenv init -)"
 export PATH="$GOROOT/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
 
-export PATH="/home/kientuong114/.poetry/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.poetry/bin:$PATH"
 
 export CDPATH=.:~:~/ctfs:~/Documents
