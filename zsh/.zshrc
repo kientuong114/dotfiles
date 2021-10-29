@@ -132,7 +132,7 @@ alias tmp='mkdir -p /tmp/test && cd /tmp/test'
 alias pwdcp='pwd | xclip -selection clipboard'
 
 alias genpwd='python -c "import string, os; alphabet = string.ascii_letters+string.digits; print(\"\".join(alphabet[ord(os.urandom(1)) % len(alphabet)] for _ in range(20)))" | xclip -selection clipboard'
-alias rev='ssh -Y -p 2522 rev@127.0.0.1'
+alias rev='ssh -Y -p 2222 rev@localhost'
 alias ctf='cd ~/ctfs/ccit21-finals'
 
 vmchall() {
@@ -143,6 +143,7 @@ vmchall() {
         echo "Missing parameter: challenge to copy over"
     fi
 }
+
 
 # wal settings
 
@@ -166,5 +167,7 @@ export PATH="$GOROOT/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
 
 export PATH="$HOME/.cargo/bin:$HOME/.poetry/bin:$PATH"
+export GPGKEY=DDCCCF336542B30E
+export GPG_TTY=$(tty)
 
 export CDPATH=.:~:~/ctfs:~/Documents
