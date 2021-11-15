@@ -32,13 +32,13 @@ nnoremap <leader>sv :source ~/.vim/vimrc<cr>
 
 " Puts double quotes around current word
 
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+" nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+" nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 
 " Puts the appropriate parenthesis around visual selection
 
-vnoremap <leader>( <esc>`>a)<esc>`<i(<esc>
-vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
+" vnoremap <leader>( <esc>`>a)<esc>`<i(<esc>
+" vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
 
 " INSERT MODE
 
@@ -336,19 +336,7 @@ let g:elm_setup_keybindings = 0
 
 " let g:tex_flavor = 'xetex'
 let g:vimtex_view_general_viewer = 'okular'
-let g:vimtex_compiler_tectonic = 1
-" let g:vimtex_compiler_latexmk = {
-"     \ 'executable' : 'latexmk',
-"     \ 'options' : [
-"     \   '-xelatex',
-"     \   '-pdf',
-"     \   '-shell-escape',
-"     \   '-verbose',
-"     \   '-file-line-error',
-"     \   '-synctex=1',
-"     \   '-interaction=nonstopmode',
-"     \ ],
-"     \}
+let g:vimtex_compiler_method = 'tectonic'
 "
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
@@ -444,6 +432,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'fatih/vim-go'
+Plug 'petRUShka/vim-sage'
 
 " Other stuff
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
