@@ -18,13 +18,13 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/kientuong114/.oh-my-zsh"
+# export ZSH="/home/kientuong114/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -86,7 +86,7 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git vi-mode zsh-autosuggestions fzf docker docker-compose)
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -120,6 +120,11 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Antigen plugin manager
+source $HOME/antigen.zsh
+
+antigen init $HOME/.antigenrc
+
 # set nvim as default
 
 alias vim='nvim'
@@ -132,7 +137,7 @@ alias tmp='mkdir -p /tmp/test && cd /tmp/test'
 alias pwdcp='pwd | xclip -selection clipboard'
 
 alias genpwd='python -c "import string, os; alphabet = string.ascii_letters+string.digits; print(\"\".join(alphabet[ord(os.urandom(1)) % len(alphabet)] for _ in range(20)))" | xclip -selection clipboard'
-alias rev='ssh -Y -p 2522 rev@127.0.0.1'
+# alias rev='ssh -Y -p 2522 rev@127.0.0.1'
 alias ctf='cd ~/ctfs/ccit21-finals'
 
 vmchall() {
@@ -149,10 +154,6 @@ vmchall() {
 . "${HOME}/.cache/wal/colors.sh"
 alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn "SpaceMono-Regular"'
 
-export EDITOR=nvim
-
-export PATH=/home/kientuong114/scripts:/home/kientuong114/.local/bin:$PATH
-
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export MAUDE_LIB="/usr/share/maude"
 
@@ -160,6 +161,8 @@ export TEXMFHOME="$HOME/texmf"
 export TEXMFCNF="$HOME/texmf/web2c"
 
 export GOENV_ROOT="$HOME/.goenv"
+
+export PATH="/home/kientuong114/scripts:/home/kientuong114/.local/bin:$PATH"
 export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
 export PATH="$GOROOT/bin:$PATH"

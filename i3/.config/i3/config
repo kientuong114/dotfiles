@@ -195,24 +195,26 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        #status_command i3status
-        #status_command py3status
-        status_command i3status-rs
-        #font Inconsolata
-}
+#bar {
+#        #status_command i3status
+#        # status_command py3status
+#        ##status_command i3status-rs
+#        #font Inconsolata
+#}
 
-# take a screenshot of a screen region and copy it to a clipboard
-bindsym --release $mod+Shift+Print exec "escrotum -sC"
+bindsym --release $mod+Print exec "flameshot gui"
 
-# take a screenshot of a screen region and save it in the screenshot folder
-bindsym --release $mod+Ctrl+Shift+Print exec "escrotum -s ~/pictures/screenshots/%Y-%m-%d-%H%M%s_screenshot.png"
+# # take a screenshot of a screen region and copy it to a clipboard
+# bindsym --release $mod+Shift+Print exec "escrotum -sC"
 
-# take a screenshot of a the entire screen and copy it to a clipboard
-bindsym --release $mod+Print exec "escrotum -C"
+# # take a screenshot of a screen region and save it in the screenshot folder
+# bindsym --release $mod+Ctrl+Shift+Print exec "escrotum -s ~/pictures/screenshots/%Y-%m-%d-%H%M%s_screenshot.png"
 
-# take a screenshot of a the entire screen and save it in the screenshot folder
-bindsym --release $mod+Ctrl+Print exec "escrotum ~/pictures/screenshots/%Y-%m-%d-%H%M%s_screenshot.png"
+# # take a screenshot of a the entire screen and copy it to a clipboard
+# bindsym --release $mod+Print exec "escrotum -C"
+
+# # take a screenshot of a the entire screen and save it in the screenshot folder
+# bindsym --release $mod+Ctrl+Print exec "escrotum ~/pictures/screenshots/%Y-%m-%d-%H%M%s_screenshot.png"
 
 # Show the first scratchpad window
 bindsym $mod+Ctrl+minus scratchpad show
@@ -220,7 +222,7 @@ bindsym $mod+Ctrl+minus scratchpad show
 #Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
-bindsym $mod+Ctrl+l exec "light-locker-command -l"
+bindsym $mod+Ctrl+l exec "dm-tool lock"
 
 # i3 gaps settings
 
@@ -252,6 +254,8 @@ client.background       $bg
 
 # PROTIP: You can also dynamically set dmenu's colors this way:
 # bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 exec "redshift -l 45.27:9.11"
 exec "~/.fehbg &"
