@@ -84,7 +84,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode zsh-autosuggestions fzf docker docker-compose)
+plugins=(git vi-mode zsh-autosuggestions fzf docker docker-compose sudo)
 
 # source $ZSH/oh-my-zsh.sh
 
@@ -139,6 +139,7 @@ alias pwdcp='pwd | xclip -selection clipboard'
 alias genpwd='python -c "import string, os; alphabet = string.ascii_letters+string.digits; print(\"\".join(alphabet[ord(os.urandom(1)) % len(alphabet)] for _ in range(20)))" | xclip -selection clipboard'
 # alias rev='ssh -Y -p 2522 rev@127.0.0.1'
 alias ctf='cd ~/ctfs/ccit21-finals'
+alias music='ncmpcpp'
 
 vmchall() {
     if [ -n "$1" ]
@@ -148,6 +149,7 @@ vmchall() {
         echo "Missing parameter: challenge to copy over"
     fi
 }
+
 
 # wal settings
 
@@ -167,7 +169,10 @@ export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
 export PATH="$GOROOT/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
+export PATH="$HOME/go/bin:$PATH"
 
 export PATH="$HOME/.cargo/bin:$HOME/.poetry/bin:$PATH"
+export GPGKEY=DDCCCF336542B30E
+export GPG_TTY=$(tty)
 
 export CDPATH=.:~:~/ctfs:~/Documents
