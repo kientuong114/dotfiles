@@ -84,7 +84,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode zsh-autosuggestions fzf docker docker-compose sudo)
+plugins=(git vi-mode zsh-autosuggestions fzf docker docker-compose sudo pyenv)
 
 # source $ZSH/oh-my-zsh.sh
 
@@ -170,9 +170,13 @@ eval "$(goenv init -)"
 export PATH="$GOROOT/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$HOME/go/bin:$PATH"
+export PATH="$PATH:$(yarn global bin)"
 
 export PATH="$HOME/.cargo/bin:$HOME/.poetry/bin:$PATH"
 export GPGKEY=DDCCCF336542B30E
 export GPG_TTY=$(tty)
 
 export CDPATH=.:~:~/ctfs:~/Documents
+
+export PATH="$HOME/.pyenv/shims:$PATH"
+eval "$(pyenv init -)"

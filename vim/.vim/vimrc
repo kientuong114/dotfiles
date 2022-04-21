@@ -439,6 +439,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'fatih/vim-go'
 Plug 'petRUShka/vim-sage'
+Plug 'jupyter-vim/jupyter-vim'
+Plug 'kblin/vim-fountain'
 
 " Other stuff
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}

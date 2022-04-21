@@ -202,19 +202,7 @@ bindsym $mod+r mode "resize"
 #        #font Inconsolata
 #}
 
-bindsym --release $mod+Print exec "flameshot gui"
-
-# # take a screenshot of a screen region and copy it to a clipboard
-# bindsym --release $mod+Shift+Print exec "escrotum -sC"
-
-# # take a screenshot of a screen region and save it in the screenshot folder
-# bindsym --release $mod+Ctrl+Shift+Print exec "escrotum -s ~/pictures/screenshots/%Y-%m-%d-%H%M%s_screenshot.png"
-
-# # take a screenshot of a the entire screen and copy it to a clipboard
-# bindsym --release $mod+Print exec "escrotum -C"
-
-# # take a screenshot of a the entire screen and save it in the screenshot folder
-# bindsym --release $mod+Ctrl+Print exec "escrotum ~/pictures/screenshots/%Y-%m-%d-%H%M%s_screenshot.png"
+bindsym --release Print exec "/bin/flameshot gui"
 
 # Show the first scratchpad window
 bindsym $mod+Ctrl+minus scratchpad show
@@ -263,5 +251,6 @@ exec "redshift -l 45.27:9.11"
 exec "~/.fehbg &"
 exec "picom --experimental-backends --blur-method dual_kawase -b"
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always "/bin/flameshot &"
 exec_always --no-startup-id $HOME/scripts/launch_polybar.sh
 exec --no-startup-id i3-battery-popup
