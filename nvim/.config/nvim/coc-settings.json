@@ -8,5 +8,6 @@
     }
   },
   "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/12.0.1/clangd_12.0.1/bin/clangd",
-  "sql.database":"postgresql"
+  "sql.database": "postgresql",
+  "python.jediPath": "/usr/lib/python3.10/site-packages"
 }

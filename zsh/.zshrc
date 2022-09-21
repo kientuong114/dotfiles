@@ -131,14 +131,13 @@ alias vim='nvim'
 alias cat='bat'
 alias ls='exa'
 alias df='duf'
-alias pwn='source ~/.venv/pwn/bin/activate'
+alias pwnenv='source ~/.venv/pwn/bin/activate'
 alias wp='wal -i /home/kientuong114/pictures/wallpapers'
 alias tmp='mkdir -p /tmp/test && cd /tmp/test'
 alias pwdcp='pwd | xclip -selection clipboard'
 
-alias genpwd='python -c "import string, os; alphabet = string.ascii_letters+string.digits; print(\"\".join(alphabet[ord(os.urandom(1)) % len(alphabet)] for _ in range(20)))" | xclip -selection clipboard'
-# alias rev='ssh -Y -p 2522 rev@127.0.0.1'
-alias ctf='cd ~/ctfs/ccit21-finals'
+alias revvm='ssh -Y -p 2522 rev@127.0.0.1'
+alias ctf='cd ~/ctfs/defcon22/finals'
 alias music='ncmpcpp'
 
 vmchall() {
@@ -159,8 +158,9 @@ alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export MAUDE_LIB="/usr/share/maude"
 
-export TEXMFHOME="$HOME/texmf"
-export TEXMFCNF="$HOME/texmf/web2c"
+# export TEXMFHOME="$HOME/texmf"
+# export TEXMFCNF="$HOME/texmf/web2c"
+export TEXMFCNF="/usr/share/texmf-dist/web2c"
 
 export GOENV_ROOT="$HOME/.goenv"
 
