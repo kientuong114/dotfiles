@@ -122,8 +122,10 @@ fi
 
 # Antigen plugin manager
 source $HOME/antigen.zsh
-
 antigen init $HOME/.antigenrc
+
+# Node Version Manager
+source /usr/share/nvm/init-nvm.sh
 
 # set nvim as default
 
@@ -132,9 +134,13 @@ alias cat='bat'
 alias ls='exa'
 alias df='duf'
 alias pwnenv='source ~/.venv/pwn/bin/activate'
+alias cryptoenv='source ~/.venv/cryptovenv/bin/activate'
 alias wp='wal -i /home/kientuong114/pictures/wallpapers'
 alias tmp='mkdir -p /tmp/test && cd /tmp/test'
 alias pwdcp='pwd | xclip -selection clipboard'
+
+# This enables zsh to "follow" ranger when moving around folders
+alias ranger='. ranger'
 
 alias revvm='ssh -Y -p 2522 rev@127.0.0.1'
 alias ctf='cd ~/ctfs/defcon22/finals'
@@ -162,11 +168,11 @@ export MAUDE_LIB="/usr/share/maude"
 # export TEXMFCNF="$HOME/texmf/web2c"
 export TEXMFCNF="/usr/share/texmf-dist/web2c"
 
-export GOENV_ROOT="$HOME/.goenv"
+# export GOENV_ROOT="$HOME/.goenv"
 
 export PATH="/home/kientuong114/scripts:/home/kientuong114/.local/bin:$PATH"
-export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
+# export PATH="$GOENV_ROOT/bin:$PATH"
+# eval "$(goenv init -)"
 export PATH="$GOROOT/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$HOME/go/bin:$PATH"

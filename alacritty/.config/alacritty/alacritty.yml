@@ -95,6 +95,7 @@ window:
 
 # Font configuration
 font:
+  size: 7
   # Normal (roman) font face
   normal:
     # Font family
@@ -104,7 +105,7 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     #family: Source Code Pro
-    family: "MesloLGS NF"
+    family: "mononoki Nerd Font"
     #family: "Inconsolata"
     #family: Comic Sans
 

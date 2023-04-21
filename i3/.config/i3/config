@@ -249,8 +249,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 exec "redshift -l 45.27:9.11"
 exec "~/.fehbg &"
-exec "picom --experimental-backends --blur-method dual_kawase -b"
+exec "picom --blur-method dual_kawase -b"
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always "/bin/flameshot &"
-exec_always --no-startup-id $HOME/scripts/launch_polybar.sh
+# exec_always --no-startup-id $HOME/scripts/launch_polybar.sh
 exec --no-startup-id i3-battery-popup
