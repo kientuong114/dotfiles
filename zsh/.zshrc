@@ -177,12 +177,15 @@ export PATH="$GOROOT/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$PATH:$(yarn global bin)"
-
+export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$HOME/.poetry/bin:$PATH"
+
 export GPGKEY=DDCCCF336542B30E
 export GPG_TTY=$(tty)
 
 export CDPATH=.:~:~/ctfs:~/Documents
 
 export PATH="$HOME/.pyenv/shims:$PATH"
+export PATH="$HOME/aoc/scripts:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
