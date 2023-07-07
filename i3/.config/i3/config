@@ -235,7 +235,8 @@ client.background       $bg
 exec_always --no-startup-id /usr/bin/light-locker
 exec --no-startup-id dockd --daemon
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/scripts/launch_polybar.sh
 
 exec "redshift -l 45.27:9.11"
 exec "~/.fehbg &"
