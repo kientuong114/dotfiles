@@ -188,4 +188,3 @@ export CDPATH=.:~:~/ctfs:~/Documents
 export PATH="$HOME/.pyenv/shims:$PATH"
 export PATH="$HOME/aoc/scripts:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
