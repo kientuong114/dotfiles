@@ -143,10 +143,11 @@ au BufNewFile, BufRead *.py
 
 au BufRead, BufNewFile *.py, *.piw, *.c, *.h match BadWhiteSpace /\s\+$/
 
-" Set sage filetypes to be Python
+" Add SageMath files as Python files
 au BufRead,BufNewFile *.sage,*.spyx,*.pyx setfiletype python
 
-" Python highlight
+" Allow to use :make to run and test sage files
+autocmd FileType python set makeprg=sage\ -b\ &&\ sage\ -t\ %
 
 let python_highlight_all=1
 
@@ -372,6 +373,9 @@ autocmd FileType markdown nmap <silent> <leader>p :call mdip#MarkdownClipboardIm
 " let g:mdip_imgname = 'image'
 " vim-plug automatic installation
 
+" Astro settings
+let g:astro_typescript = 'enable'
+
 " FastFold settings
 
 nmap zuz <Plug>(FastFoldUpdate)
@@ -536,6 +540,7 @@ Plug 'fatih/vim-go'
 Plug 'petRUShka/vim-sage'
 Plug 'jupyter-vim/jupyter-vim'
 Plug 'kblin/vim-fountain'
+Plug 'wuelnerdotexe/vim-astro'
 
 " Other stuff
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
