@@ -188,3 +188,7 @@ export CDPATH=.:~:~/ctfs:~/Documents
 export PATH="$HOME/.pyenv/shims:$PATH"
 export PATH="$HOME/aoc/scripts:$PATH"
 eval "$(pyenv init -)"
+
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
