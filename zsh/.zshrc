@@ -96,11 +96,7 @@ plugins=(git vi-mode zsh-autosuggestions fzf docker docker-compose sudo pyenv)
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='nvim'
-fi
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -127,7 +123,7 @@ antigen init $HOME/.antigenrc
 # Node Version Manager
 source /usr/share/nvm/init-nvm.sh
 
-# set nvim as default
+# Some convenient aliases
 
 alias vim='nvim'
 alias cat='bat'
@@ -135,60 +131,54 @@ alias ls='exa'
 alias df='duf'
 alias pwnenv='source ~/.venv/pwn/bin/activate'
 alias cryptoenv='source ~/.venv/cryptovenv/bin/activate'
-alias wp='wal -i /home/kientuong114/pictures/wallpapers'
+alias wp='wal -i $HOME/pictures/wallpapers'
 alias tmp='mkdir -p /tmp/test && cd /tmp/test'
 alias pwdcp='pwd | xclip -selection clipboard'
 
 # This enables zsh to "follow" ranger when moving around folders
 alias ranger='. ranger'
 
-alias revvm='ssh -Y -p 2522 rev@127.0.0.1'
-alias ctf='cd ~/ctfs/defcon22/finals'
-alias music='ncmpcpp'
-
-vmchall() {
-    if [ -n "$1" ]
-    then
-        cp "$1" ~/ctfs/vm
-    else
-        echo "Missing parameter: challenge to copy over"
-    fi
-}
-
-
-# wal settings
-
+# wal and dmenu settings
 . "${HOME}/.cache/wal/colors.sh"
 alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn "SpaceMono-Regular"'
 
+# SSH Auth
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-export MAUDE_LIB="/usr/share/maude"
 
-# export TEXMFHOME="$HOME/texmf"
-# export TEXMFCNF="$HOME/texmf/web2c"
+# LaTeX setting
 export TEXMFCNF="/usr/share/texmf-dist/web2c"
 
-# export GOENV_ROOT="$HOME/.goenv"
+# Add more places where people can just inject malware on my computer
+export PATH="$HOME/scripts:$HOME/.local/bin:$PATH"
 
-export PATH="/home/kientuong114/scripts:/home/kientuong114/.local/bin:$PATH"
+# export GOENV_ROOT="$HOME/.goenv"
 # export PATH="$GOENV_ROOT/bin:$PATH"
 # eval "$(goenv init -)"
 export PATH="$GOROOT/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$HOME/go/bin:$PATH"
-export PATH="$PATH:$(yarn global bin)"
+export PATH="$PATH:$(yarn global bin --offline)"
 export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$HOME/.poetry/bin:$PATH"
 
+# PGP Setup
 export GPGKEY=DDCCCF336542B30E
 export GPG_TTY=$(tty)
 
-export CDPATH=.:~:~/ctfs:~/Documents
-
+# Python stuff
 export PATH="$HOME/.pyenv/shims:$PATH"
-export PATH="$HOME/aoc/scripts:$PATH"
 eval "$(pyenv init -)"
 
-export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
+# export GTK_IM_MODULE=ibus
+# export QT_IM_MODULE=ibus
+# export XMODIFIERS=@im=ibus
+
+# Settings for Poetry loading
+fpath+=~/.zfunc
+
+# Zoxide setting
+# The readme says this should be "at the end"
+
+export _ZO_ECHO=1
+autoload -Uz compinit; compinit -i
+eval "$(zoxide init --cmd cd zsh)"

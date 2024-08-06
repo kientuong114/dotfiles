@@ -118,11 +118,7 @@ augroup END
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
-" ABBREVIATIONS
-
-iabbrev @@ kientuong@gmail.com
-
-let g:python3_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/home/kientuong114/.venv/semshi/bin/python'
 
 let g:C_UseTool_cmake = 'yes'
 let g:C_UseTool_doxygen = 'yes'
@@ -309,7 +305,7 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 " Add (Neo)Vim's native statusline support
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics
@@ -383,7 +379,8 @@ let g:fastfold_savehook = 1
 let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
 let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 
-"let g:markdown_folding = 1
+let g:markdown_folding = 1
+let g:vim_markdown_folding_disabled = 1 " Currently vim-markdown is buggy
 let g:python_folding = 1
 
 " vimtext config
@@ -496,7 +493,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'sickill/vim-monokai'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/vim-airline/vim-airline.git'
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'wookayin/semshi', { 'do': ':UpdateRemotePlugins', 'tag': '*' }
 Plug 'styled-components/vim-styled-components' 
 
 " Tabs
@@ -533,7 +530,7 @@ Plug 'mattn/emmet-vim'
 Plug 'evanleck/vim-svelte'
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'codechips/coc-svelte', {'do': 'npm install'}
+" Plug 'codechips/coc-svelte', {'do': 'npm install'}
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'fatih/vim-go'
@@ -546,12 +543,18 @@ Plug 'wuelnerdotexe/vim-astro'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'ferrine/md-img-paste.vim'
 Plug 'Konfekt/FastFold'
+
+" Copilot
+Plug 'github/copilot.vim'
+
+" Typst
+Plug 'kaarmu/typst.vim'
 call plug#end()
 
 " graphic settings
 
 colorscheme monokai
-hi! Normal ctermbg=NONE ctermfg=NONE
+" hi! Normal ctermbg=NONE ctermfg=NONE
 let g:airline_powerline_fonts = 1
 
 " Various
